@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "MOHAMED RASHITH",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 34.67, "left": -72.67, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled1", "top": -78.5, "left": -75.7, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 6.59, "left": 88.81, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 154.32,
+      "left": 49.04,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "oled1:GND", "esp:GND.1", "black", [ "v-32.06", "h256.76", "v299.33" ] ],
+    [ "oled1:VCC", "esp:3V3", "red", [ "v-20.06", "h281.98", "v288.67" ] ],
+    [ "oled1:SCL", "esp:D22", "blue", [ "v-12.73", "h198.53", "v159.33" ] ],
+    [ "oled1:SDA", "esp:D21", "green", [ "v-6.06", "h175.37", "v188.67" ] ],
+    [ "led1:A", "r1:2", "green", [ "v0" ] ],
+    [ "r1:1", "esp:D2", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v82.85", "h23.86", "v51.14" ] ]
+  ]
+}
